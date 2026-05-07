@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
+import { emailAddress, phoneDisplay, phoneHref, quoteMailto } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact & Request a Quote",
@@ -37,6 +38,10 @@ export default function ContactPage() {
               Serving Gautier, Ocean Springs, Pascagoula, Biloxi, Gulfport, and the surrounding
               Mississippi Gulf Coast with FAA Part 107 certified drone services.
             </p>
+            <div className="contact-links" aria-label="Direct contact options">
+              <a href={phoneHref}>{phoneDisplay}</a>
+              <a href={quoteMailto}>{emailAddress}</a>
+            </div>
           </div>
           <ContactForm />
         </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { emailAddress, phoneDisplay, phoneHref, quoteMailto } from "@/lib/contact";
 
 export function Footer() {
   return (
@@ -17,6 +18,10 @@ export function Footer() {
             Professional drone inspections, real estate media, insurance documentation, and property
             imaging across the Mississippi Gulf Coast.
           </p>
+          <div className="footer-contact" aria-label="Kaptsure contact information">
+            <a href={phoneHref}>{phoneDisplay}</a>
+            <a href={quoteMailto}>{emailAddress}</a>
+          </div>
         </div>
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link href="/">Home</Link>

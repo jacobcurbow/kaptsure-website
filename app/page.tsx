@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CTA } from "@/components/CTA";
 import { ServiceCard } from "@/components/ServiceCard";
+import { phoneHref } from "@/lib/contact";
 
 const services = [
   {
@@ -50,7 +51,7 @@ export default function Home() {
               <Link className="button button-primary" href="/contact">
                 Request a Quote
               </Link>
-              <Link className="button button-secondary" href="/contact">
+              <Link className="button button-secondary" href={phoneHref}>
                 Call Now
               </Link>
             </div>

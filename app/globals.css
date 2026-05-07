@@ -576,6 +576,23 @@ textarea {
   line-height: 1.7;
 }
 
+.contact-links,
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 18px;
+  font-weight: 850;
+}
+
+.contact-links a {
+  color: var(--black);
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
 .contact-card-image {
   position: relative;
   min-height: 230px;
@@ -656,6 +673,14 @@ textarea {
   margin: 16px 0 0;
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.7;
+}
+
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.footer-contact a:hover {
+  color: var(--green);
 }
 
 .footer-nav {

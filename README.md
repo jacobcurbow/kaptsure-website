@@ -22,4 +22,4 @@ npm run build
 - Logo assets live in `public/images/kaptsure-logo.svg` and `public/images/kaptsure-logo.png`.
 - Optimized local photography assets live in `public/images/` and are sourced from royalty-free Pexels photos.
 - The site uses the Next.js App Router with reusable Header, Footer, CTA, ServiceCard, and ContactForm components.
-- Replace the contact form `mailto:` address and the "Call Now" destination with Kaptsure's live phone/email when available.
+- Contact actions are wired to `719-205-7777` and `jacob@katpsure.com`.

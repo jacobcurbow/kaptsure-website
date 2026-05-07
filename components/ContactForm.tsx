@@ -1,3 +1,5 @@
+import { quoteMailto } from "@/lib/contact";
+
 const serviceOptions = [
   "Drone Roof Inspections",
   "Real Estate Aerial Photos & Video",
@@ -9,7 +11,7 @@ const serviceOptions = [
 
 export function ContactForm() {
   return (
-    <form className="quote-form" action="mailto:info@kaptsure.com" method="post" encType="text/plain">
+    <form className="quote-form" action={quoteMailto} method="post" encType="text/plain">
       <div className="form-grid">
         <div className="field">
           <label htmlFor="name">Name</label>
