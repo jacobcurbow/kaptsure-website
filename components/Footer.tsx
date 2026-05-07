@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { emailAddress, phoneDisplay, phoneHref, quoteMailto } from "@/lib/contact";
+import { emailAddress, phoneDisplay, phoneHref } from "@/lib/contact";
 
 export function Footer() {
   return (
@@ -20,7 +20,7 @@ export function Footer() {
           </p>
           <div className="footer-contact" aria-label="Kaptsure contact information">
             <a href={phoneHref}>{phoneDisplay}</a>
-            <a href={quoteMailto}>{emailAddress}</a>
+            <span>{emailAddress}</span>
           </div>
         </div>
         <nav className="footer-nav" aria-label="Footer navigation">

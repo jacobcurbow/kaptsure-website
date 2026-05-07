@@ -48,15 +48,16 @@
             </p>
             <div class="contact-links" aria-label="Direct contact options">
               <a href="tel:+17192057777">719-205-7777</a>
-              <a href="mailto:jacob@kaptsure.com?subject=Kaptsure%20Quote%20Request">jacob@kaptsure.com</a>
+              <span>jacob@kaptsure.com</span>
             </div>
           </div>
-          <form class="quote-form" action="mailto:jacob@kaptsure.com?subject=Kaptsure%20Quote%20Request" method="post" enctype="text/plain">
+          <form class="quote-form" id="quote-form">
             <div class="form-grid">
+              <div class="honeypot" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off" /></div>
               <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required /></div>
               <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required /></div>
               <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="preferred-date">Preferred Date</label><input id="preferred-date" name="preferred-date" type="date" /></div>
+              <div class="field"><label for="preferred-date">Preferred Date</label><input id="preferred-date" name="preferred-date" type="date" required /></div>
               <div class="field field-wide"><label for="property-address">Property Address</label><input id="property-address" name="property-address" autocomplete="street-address" required /></div>
               <div class="field field-wide">
                 <label for="service-needed">Service Needed</label>
@@ -75,10 +76,63 @@
                 <textarea id="project-details" name="project-details" placeholder="Tell us what needs to be documented, inspected, or captured." required></textarea>
               </div>
             </div>
+            <p class="form-message" id="form-message" hidden></p>
             <button class="button button-primary" type="submit">Request My Quote</button>
           </form>
         </div>
       </section>
     </main>
+    <script>
+      const quoteForm = document.getElementById("quote-form");
+      const formMessage = document.getElementById("form-message");
+
+      quoteForm?.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const button = quoteForm.querySelector("button[type='submit']");
+        const formData = new FormData(quoteForm);
+
+        button.disabled = true;
+        button.textContent = "Sending...";
+        formMessage.hidden = true;
+        formMessage.className = "form-message";
+
+        try {
+          const response = await fetch("/api/quote", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: formData.get("name"),
+              phone: formData.get("phone"),
+              email: formData.get("email"),
+              propertyAddress: formData.get("property-address"),
+              serviceNeeded: formData.get("service-needed"),
+              preferredDate: formData.get("preferred-date"),
+              projectDetails: formData.get("project-details"),
+              company: formData.get("company")
+            })
+          });
+          const result = await response.json();
+
+          if (!response.ok) {
+            throw new Error(result.message || "Something went wrong sending your request.");
+          }
+
+          formMessage.textContent = result.message || "Thanks — your request was sent. I’ll follow up soon.";
+          formMessage.classList.add("form-message-success");
+          quoteForm.reset();
+        } catch (error) {
+          formMessage.textContent =
+            error instanceof Error
+              ? error.message
+              : "Something went wrong sending your request. Please try again.";
+          formMessage.classList.add("form-message-error");
+        } finally {
+          formMessage.hidden = false;
+          button.disabled = false;
+          button.textContent = "Request My Quote";
+        }
+      });
+    </script>
   </body>
 </html>
