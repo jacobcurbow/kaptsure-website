@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact & Request a Quote | Kaptsure</title>
+    <meta
+      name="description"
+      content="Request a quote from Kaptsure for drone roof inspections, real estate media, insurance documentation, and property imaging on the Mississippi Gulf Coast."
+    />
+    <link rel="stylesheet" href="app/globals.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" aria-label="Kaptsure home"><img class="brand-logo" src="public/images/kaptsure-logo.svg" alt="Kaptsure" /></a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions"><a class="button button-primary mobile-quote" href="contact.html">Request a Quote</a></div>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Request a Quote</p>
+          <h1>Tell us what you need documented from the air.</h1>
+          <p>
+            Share the property address, service needed, project details, and preferred date. Kaptsure
+            will follow up to confirm flight details and scheduling.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container contact-layout">
+          <div class="contact-card">
+            <div class="contact-card-image">
+              <img
+                src="public/images/coastal-property-aerial.jpg"
+                alt="Aerial view of waterfront property for quote request planning"
+                loading="lazy"
+              />
+            </div>
+            <h2>Fast, professional aerial service.</h2>
+            <p>
+              Serving Gautier, Ocean Springs, Pascagoula, Biloxi, Gulfport, and the surrounding
+              Mississippi Gulf Coast with FAA Part 107 certified drone services.
+            </p>
+          </div>
+          <form class="quote-form" action="mailto:info@kaptsure.com" method="post" enctype="text/plain">
+            <div class="form-grid">
+              <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required /></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required /></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+              <div class="field"><label for="preferred-date">Preferred Date</label><input id="preferred-date" name="preferred-date" type="date" /></div>
+              <div class="field field-wide"><label for="property-address">Property Address</label><input id="property-address" name="property-address" autocomplete="street-address" required /></div>
+              <div class="field field-wide">
+                <label for="service-needed">Service Needed</label>
+                <select id="service-needed" name="service-needed" required>
+                  <option value="" selected disabled>Select a service</option>
+                  <option>Drone Roof Inspections</option>
+                  <option>Real Estate Aerial Photos & Video</option>
+                  <option>Insurance / Storm Damage Documentation</option>
+                  <option>Coastal, Waterfront & Property Imaging</option>
+                  <option>Contractor Progress Photos</option>
+                  <option>Before & After Project Documentation</option>
+                </select>
+              </div>
+              <div class="field field-wide">
+                <label for="project-details">Project Details</label>
+                <textarea id="project-details" name="project-details" placeholder="Tell us what needs to be documented, inspected, or captured." required></textarea>
+              </div>
+            </div>
+            <button class="button button-primary" type="submit">Request My Quote</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
