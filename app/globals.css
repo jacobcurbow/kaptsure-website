@@ -17,10 +17,14 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   color: var(--charcoal);
   background: var(--white);
@@ -37,6 +41,7 @@ a {
 
 img {
   display: block;
+  height: auto;
   max-width: 100%;
 }
 
@@ -45,6 +50,7 @@ input,
 select,
 textarea {
   font: inherit;
+  font-size: 16px;
 }
 
 .container {
@@ -58,6 +64,7 @@ textarea {
   z-index: 10;
   border-bottom: 1px solid rgba(223, 231, 227, 0.8);
   background: rgba(255, 255, 255, 0.94);
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 }
 
@@ -83,9 +90,23 @@ textarea {
   align-items: center;
   gap: 18px;
   overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
   color: var(--muted);
   font-size: 0.92rem;
   font-weight: 700;
+  scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav a {
+  display: inline-flex;
+  min-height: 44px;
+  flex: 0 0 auto;
+  align-items: center;
 }
 
 .nav a:hover {
@@ -101,6 +122,7 @@ textarea {
 .button {
   display: inline-flex;
   min-height: 46px;
+  max-width: 100%;
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
@@ -108,6 +130,7 @@ textarea {
   padding: 0 18px;
   font-weight: 800;
   line-height: 1;
+  text-align: center;
   transition:
     background 180ms ease,
     border-color 180ms ease,
@@ -173,6 +196,7 @@ textarea {
   color: var(--black);
   font-size: clamp(2.55rem, 6.2vw, 4.7rem);
   line-height: 1;
+  overflow-wrap: break-word;
 }
 
 .page-hero h1 {
@@ -180,6 +204,7 @@ textarea {
   color: var(--black);
   font-size: clamp(2.35rem, 6vw, 4.7rem);
   line-height: 1;
+  overflow-wrap: break-word;
 }
 
 .hero p,
@@ -199,6 +224,7 @@ textarea {
 }
 
 .hero-visual {
+  max-width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -208,6 +234,7 @@ textarea {
 
 .hero-photo {
   position: relative;
+  width: 100%;
   min-height: 430px;
   overflow: hidden;
   background: var(--black);
@@ -586,15 +613,14 @@ textarea {
 }
 
 .contact-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   color: var(--black);
   text-decoration: underline;
   text-decoration-color: var(--green);
   text-decoration-thickness: 3px;
   text-underline-offset: 5px;
-}
-
-.contact-links span {
-  color: var(--black);
 }
 
 .contact-card-image {
@@ -637,12 +663,15 @@ textarea {
 .field input,
 .field select,
 .field textarea {
+  min-height: 48px;
   width: 100%;
   border: 1px solid #cfd9d4;
   border-radius: var(--radius);
   padding: 13px 14px;
   color: var(--black);
   background: var(--white);
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .field textarea {
@@ -708,8 +737,10 @@ textarea {
   line-height: 1.7;
 }
 
-.footer-contact a,
-.footer-contact span {
+.footer-contact a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   color: rgba(255, 255, 255, 0.86);
 }
 
@@ -784,16 +815,48 @@ textarea {
 }
 
 @media (max-width: 520px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
   .brand-logo {
     width: 142px;
   }
 
   .header-inner {
     min-height: 68px;
+    gap: 10px 16px;
   }
 
   .hero {
-    padding-top: 54px;
+    padding: 44px 0 36px;
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 13vw, 3.1rem);
+    line-height: 1.03;
+  }
+
+  .hero-photo {
+    min-height: 340px;
+  }
+
+  .page-hero-image,
+  .why-image {
+    min-height: 280px;
+  }
+
+  .photo-badge {
+    left: 14px;
+    top: 14px;
+  }
+
+  .photo-card {
+    right: 14px;
+    bottom: 14px;
+    width: calc(100% - 28px);
+    padding: 14px;
   }
 
   .button {

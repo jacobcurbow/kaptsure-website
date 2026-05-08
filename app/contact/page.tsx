@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
-import { emailAddress, phoneDisplay, phoneHref } from "@/lib/contact";
+import { emailAddress, emailHref, phoneDisplay, phoneHref } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact & Request a Quote",
@@ -40,7 +40,7 @@ export default function ContactPage() {
             </p>
             <div className="contact-links" aria-label="Direct contact options">
               <a href={phoneHref}>{phoneDisplay}</a>
-              <span>{emailAddress}</span>
+              <a href={emailHref}>{emailAddress}</a>
             </div>
           </div>
           <ContactForm />
