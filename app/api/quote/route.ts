@@ -152,8 +152,13 @@ export async function POST(request: Request) {
   });
 
   if (error) {
+    console.error("Resend quote request failed", error);
     return NextResponse.json(
-      { message: "Something went wrong sending your request. Please try again." },
+      {
+        message:
+          error.message ||
+          "Resend rejected the quote request. Please check the sender email and API key settings."
+      },
       { status: 500 }
     );
   }
