@@ -30,10 +30,10 @@ The request quote form sends email from a server-side Next.js API route with Res
 ```bash
 RESEND_API_KEY=your_resend_api_key
 CONTACT_TO_EMAIL=jacob@kaptsure.com
-CONTACT_FROM_EMAIL=jacob@kaptsure.com
+CONTACT_FROM_EMAIL=Kaptsure <quotes@contacts.kaptsure.com>
 ```
 
-`CONTACT_TO_EMAIL` should be the Google Workspace inbox that receives quote notifications. `CONTACT_FROM_EMAIL` must use a sender/domain that is verified in Resend.
+`CONTACT_TO_EMAIL` should be the Google Workspace inbox that receives quote notifications. `CONTACT_FROM_EMAIL` must use a sender/domain that is verified in Resend. If Resend says the API key is not authorized to send from `kaptsure.com`, use the verified sending subdomain, such as `quotes@contacts.kaptsure.com`.
 
 After adding or changing environment variables in Vercel, redeploy the site from the Vercel dashboard so the new values are available to the API route.
 
