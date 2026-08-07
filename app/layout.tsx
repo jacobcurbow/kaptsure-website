@@ -3,11 +3,67 @@ import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { emailAddress, phoneHref } from "@/lib/contact";
 
 const googleAnalyticsId = "G-7WQTTPZDX6";
+const siteUrl = "https://www.kaptsure.com";
+const phoneNumber = phoneHref.replace("tel:", "");
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${siteUrl}/#localbusiness`,
+  name: "Kaptsure",
+  url: siteUrl,
+  logo: `${siteUrl}/images/kaptsure-logo.png`,
+  image: `${siteUrl}/images/drone-roof-hero.jpg`,
+  description:
+    "FAA Part 107 certified drone services for roof inspections, real estate media, insurance documentation, and property imaging across the Mississippi Gulf Coast.",
+  telephone: phoneNumber,
+  email: emailAddress,
+  priceRange: "$$",
+  areaServed: [
+    "Gautier, MS",
+    "Ocean Springs, MS",
+    "Pascagoula, MS",
+    "Biloxi, MS",
+    "Gulfport, MS",
+    "Mississippi Gulf Coast"
+  ],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Drone roof inspections"
+      }
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Real estate aerial media"
+      }
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Insurance documentation"
+      }
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Property evaluation imaging"
+      }
+    }
+  ]
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kaptsure.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Kaptsure | Drone Inspections & Aerial Imaging | Mississippi Gulf Coast",
     template: "%s | Kaptsure"
@@ -52,6 +108,11 @@ export default function RootLayout({
             gtag('config', '${googleAnalyticsId}');
           `}
         </Script>
+        <script
+          id="local-business-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         <Header />
         {children}
         <Footer />
