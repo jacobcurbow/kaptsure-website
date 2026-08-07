@@ -14,6 +14,16 @@ export const metadata: Metadata = {
   },
   description:
     "FAA Part 107 certified drone services for roof inspections, real estate media, insurance documentation, and property imaging across the Mississippi Gulf Coast.",
+  applicationName: "Kaptsure",
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" }
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }]
+  },
   openGraph: {
     title: "Kaptsure | Drone Inspections & Aerial Imaging",
     description:
