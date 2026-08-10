@@ -34,6 +34,7 @@ const serviceDetails = [
   },
   {
     title: "Insurance / Storm Damage Documentation",
+    href: "/services/insurance-storm-documentation",
     copy:
       "After severe weather, clear documentation matters. Kaptsure provides aerial images and video that help homeowners, adjusters, contractors, and property owners record visible damage and property conditions."
   },
@@ -44,6 +45,7 @@ const serviceDetails = [
   },
   {
     title: "Contractor Progress Photos",
+    href: "/services/construction-progress-photography",
     copy:
       "Track job progress from a consistent aerial perspective. Kaptsure supports contractors with professional documentation for roofing, construction, exterior improvements, and site updates."
   },

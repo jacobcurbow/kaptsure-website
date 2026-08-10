@@ -26,7 +26,16 @@ const services = [
     description:
       "Capture clear condition records for adjusters, homeowners, contractors, and property owners after storms or property damage.",
     imageSrc: "/images/roofing-documentation.jpg",
-    imageAlt: "Roofer documenting a residential roof during exterior repair work"
+    imageAlt: "Roofer documenting a residential roof during exterior repair work",
+    href: "/services/insurance-storm-documentation"
+  },
+  {
+    title: "Construction Progress Aerial Imaging",
+    description:
+      "Create a consistent visual record of construction milestones, exterior work, roofing projects, and site progress for teams and property owners.",
+    imageSrc: "/images/coastal-property-aerial.jpg",
+    imageAlt: "Aerial overview of Gulf Coast properties suitable for construction progress documentation",
+    href: "/services/construction-progress-photography"
   },
   {
     title: "Coastal Property Imaging",

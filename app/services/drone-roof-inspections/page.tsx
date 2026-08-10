@@ -107,7 +107,10 @@ export default function DroneRoofInspectionsPage() {
               After wind, hail, or severe weather, a timely flight can create a visual record of
               visible roof and property conditions. Kaptsure supplies the imagery; claim coverage,
               damage determinations, and repair recommendations remain with the appropriate licensed
-              professionals and insurance representatives.
+              professionals and insurance representatives. Learn more about our focused
+              {" "}<Link className="service-link" href="/services/insurance-storm-documentation">
+                insurance and storm documentation service
+              </Link>.
             </p>
             <h3>Property-condition records</h3>
             <p>
