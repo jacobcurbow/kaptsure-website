@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
@@ -21,11 +22,13 @@ export const metadata: Metadata = {
 const serviceDetails = [
   {
     title: "Drone Roof Inspections",
+    href: "/services/drone-roof-inspections",
     copy:
       "Kaptsure helps document roof conditions without sending someone up a ladder. High-resolution aerial images can support roofing estimates, maintenance planning, storm assessments, and property evaluations."
   },
   {
     title: "Real Estate Aerial Photos & Video",
+    href: "/services/real-estate-drone-photography",
     copy:
       "Aerial media helps buyers understand the full property, not just the front door. Kaptsure captures listing visuals for residential, commercial, land, waterfront, and investment properties across the Gulf Coast."
   },
@@ -81,6 +84,11 @@ export default function ServicesPage() {
             <article className="service-detail" key={service.title}>
               <h2>{service.title}</h2>
               <p>{service.copy}</p>
+              {service.href ? (
+                <Link className="service-link" href={service.href}>
+                  Explore this service <span aria-hidden="true">→</span>
+                </Link>
+              ) : null}
             </article>
           ))}
         </div>

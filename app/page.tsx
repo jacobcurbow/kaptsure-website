@@ -10,14 +10,16 @@ const services = [
     description:
       "Document roof conditions quickly and safely with high-resolution aerial imaging for homes, commercial buildings, and storm-affected properties.",
     imageSrc: "/images/residential-roofs.jpg",
-    imageAlt: "Aerial view of residential rooftops used for drone roof inspection planning"
+    imageAlt: "Aerial view of residential rooftops used for drone roof inspection planning",
+    href: "/services/drone-roof-inspections"
   },
   {
     title: "Real Estate Aerial Media",
     description:
       "Showcase listings, land, waterfront access, neighborhood context, and property scale with polished aerial photos and video.",
     imageSrc: "/images/waterfront-real-estate.jpg",
-    imageAlt: "Aerial view of waterfront homes and canals for real estate marketing"
+    imageAlt: "Aerial view of waterfront homes and canals for real estate marketing",
+    href: "/services/real-estate-drone-photography"
   },
   {
     title: "Insurance & Claims Documentation",
