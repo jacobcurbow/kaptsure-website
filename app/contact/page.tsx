@@ -6,7 +6,17 @@ import { emailAddress, emailHref, phoneDisplay, phoneHref } from "@/lib/contact"
 export const metadata: Metadata = {
   title: "Contact & Request a Quote",
   description:
-    "Request a quote from Kaptsure for drone roof inspections, real estate media, insurance documentation, and property imaging on the Mississippi Gulf Coast."
+    "Request a quote from Kaptsure for drone roof inspections, real estate media, insurance documentation, and property imaging on the Mississippi Gulf Coast.",
+  alternates: {
+    canonical: "/contact"
+  },
+  openGraph: {
+    url: "https://www.kaptsure.com/contact",
+    title: "Kaptsure | Drone Inspections & Aerial Imaging",
+    description:
+      "Professional drone inspections, real estate media, insurance documentation, and property imaging across the Mississippi Gulf Coast.",
+    images: ["/images/kaptsure-logo.png"]
+  }
 };
 
 export default function ContactPage() {

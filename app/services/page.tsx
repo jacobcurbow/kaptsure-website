@@ -5,7 +5,17 @@ import { CTA } from "@/components/CTA";
 export const metadata: Metadata = {
   title: "Drone Services",
   description:
-    "Drone roof inspections, real estate aerial media, insurance documentation, coastal property imaging, contractor progress photos, and before and after project documentation."
+    "Drone roof inspections, real estate aerial media, insurance documentation, coastal property imaging, contractor progress photos, and before and after project documentation.",
+  alternates: {
+    canonical: "/services"
+  },
+  openGraph: {
+    url: "https://www.kaptsure.com/services",
+    title: "Kaptsure | Drone Inspections & Aerial Imaging",
+    description:
+      "Professional drone inspections, real estate media, insurance documentation, and property imaging across the Mississippi Gulf Coast.",
+    images: ["/images/kaptsure-logo.png"]
+  }
 };
 
 const serviceDetails = [

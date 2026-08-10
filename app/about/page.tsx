@@ -5,7 +5,17 @@ import { CTA } from "@/components/CTA";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Kaptsure is a locally owned professional drone services company serving Gautier, Ocean Springs, Pascagoula, Biloxi, Gulfport, and the Mississippi Gulf Coast."
+    "Kaptsure is a locally owned professional drone services company serving Gautier, Ocean Springs, Pascagoula, Biloxi, Gulfport, and the Mississippi Gulf Coast.",
+  alternates: {
+    canonical: "/about"
+  },
+  openGraph: {
+    url: "https://www.kaptsure.com/about",
+    title: "Kaptsure | Drone Inspections & Aerial Imaging",
+    description:
+      "Professional drone inspections, real estate media, insurance documentation, and property imaging across the Mississippi Gulf Coast.",
+    images: ["/images/kaptsure-logo.png"]
+  }
 };
 
 export default function AboutPage() {
