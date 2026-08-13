@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CTA } from "@/components/CTA";
 
-const siteUrl = "https://www.kaptsure.com";
+const siteUrl = "https://kaptsure.com";
 const pageUrl = `${siteUrl}/services/real-estate-drone-photography`;
 
 export const metadata: Metadata = {

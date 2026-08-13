@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { emailAddress, phoneHref } from "@/lib/contact";
 
 const googleAnalyticsId = "G-7WQTTPZDX6";
-const siteUrl = "https://www.kaptsure.com";
+const siteUrl = "https://kaptsure.com";
 const phoneNumber = phoneHref.replace("tel:", "");
 
 const localBusinessJsonLd = {

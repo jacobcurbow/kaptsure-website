@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/"
     },
-    sitemap: "https://www.kaptsure.com/sitemap.xml"
+    sitemap: "https://kaptsure.com/sitemap.xml"
   };
 }

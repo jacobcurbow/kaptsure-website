@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: "/about"
   },
   openGraph: {
-    url: "https://www.kaptsure.com/about",
+    url: "https://kaptsure.com/about",
     title: "Kaptsure | Drone Inspections & Aerial Imaging",
     description:
       "Professional drone inspections, real estate media, insurance documentation, and property imaging across the Mississippi Gulf Coast.",
