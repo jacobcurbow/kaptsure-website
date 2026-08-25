@@ -144,6 +144,19 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section marketing-note" aria-labelledby="marketing-dashboard">
+        <div className="container marketing-note-inner">
+          <p className="eyebrow">Business Technology</p>
+          <h2 id="marketing-dashboard">Kaptsure Marketing Dashboard</h2>
+          <p>
+            Kaptsure also develops a secure marketing analytics dashboard for authorized business
+            clients. Through client-authorized integrations, it brings together website analytics,
+            search performance, advertising performance, and related business data so owners can
+            better understand their marketing and make informed decisions.
+          </p>
+        </div>
+      </section>
+
       <CTA />
 
       <section className="service-area">
